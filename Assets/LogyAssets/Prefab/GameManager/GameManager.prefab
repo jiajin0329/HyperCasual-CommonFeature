@@ -44,9 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84079011058c7c443aeb83d7063c1251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTouch: 0
-  _touchPosition: {x: 0, y: 0}
-  _touchDeltaPosition: {x: 0, y: 0}
+  features: []
+  input:
+    name: Input
+    _onTouch: 0
+    _touchPosition: {x: 0, y: 0}
+    _touchDeltaPosition: {x: 0, y: 0}
+  inputDis:
+    name: InputDis
 --- !u!114 &619831958
 MonoBehaviour:
   m_ObjectHideFlags: 0
