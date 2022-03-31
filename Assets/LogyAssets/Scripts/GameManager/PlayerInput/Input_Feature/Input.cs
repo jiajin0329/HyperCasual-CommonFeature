@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Logy
 {
     [System.Serializable]
-    public class Input : Feature {
+    public class Input {
         static private bool static_onTouch;
         static public bool onTouch {get{return static_onTouch;}}
         [SerializeField] private bool _onTouch;
@@ -27,11 +27,7 @@ namespace Logy
         static public Vector2 touchDeltaPosition {get{return static_touchPosition;}}
         [SerializeField] private Vector2 _touchDeltaPosition;
 
-        static private float  static_dis;
-        static public float dis {get{return static_dis;}}
-        [SerializeField] private float _dis;
-
-        private Input() {name = "Input";}
+        private Input() {}
 
         private void GetInputPos() {
             if(UnityEngine.Input.GetMouseButtonDown(0)) {
@@ -57,22 +53,16 @@ namespace Logy
             }
         }
 
-        private void InputDis() {
-            static_dis = Vector2.Distance(static_touchStartPosition, static_touchPosition);
-        }
-
         private void ShowVariable() {
             _onTouch = static_onTouch;
             _touchStartPosition = static_touchStartPosition;
             _touchPosition = static_touchPosition;
             _touchDeltaPosition = static_touchDeltaPosition;
-            _dis = static_dis;
         }
 
-        public override void Main() {
+        public void Main() {
             GetInputPos();
             ShowVariable();
-            InputDis();
         }
     }
 }
