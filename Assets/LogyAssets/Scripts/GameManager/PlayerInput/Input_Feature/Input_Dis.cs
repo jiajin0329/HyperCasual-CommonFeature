@@ -8,7 +8,16 @@ public class Input_Dis {
     static public float dis {get{return static_dis;}}
     [SerializeField] private float _dis;
 
-    public void Main() {
+    private void _Input_Dis() {
         static_dis = Vector2.Distance(Logy.Input.touchStartPosition, Logy.Input.touchPosition);
+    }
+
+    private void ShowVariable() {
+        _dis = static_dis;;
+    }
+
+    public void Main() {
+        _Input_Dis();
+        ShowVariable();
     }
 }

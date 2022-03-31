@@ -50,6 +50,9 @@ namespace Logy
             }
             else if(UnityEngine.Input.GetMouseButtonUp(0)) {
                 lastPosition = Vector2.zero;
+                static_touchStartPosition = Vector2.zero;
+                static_touchPosition = Vector2.zero;
+                static_touchDeltaPosition = Vector2.zero;
             }
         }
 
