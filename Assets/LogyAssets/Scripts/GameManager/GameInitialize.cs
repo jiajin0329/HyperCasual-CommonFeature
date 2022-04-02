@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameInitialize : MonoBehaviour {
     [SerializeField] private Objects[] OpenObjects;
     [SerializeField] private Objects[] CloseObjects;
-    private void Start() {
+    [SerializeField] private StartPosition[] startPositions;
+    private void Awake() {
         Application.targetFrameRate = 60;
         print("set " + Application.targetFrameRate + "fps");
 
@@ -21,6 +22,10 @@ public class GameInitialize : MonoBehaviour {
             for(j = 0; j < CloseObjects[i].gameObjects.Length; j++) {
                 CloseObjects[i].gameObjects[j].SetActive(false);
             }
+        }
+
+        for(i = 0; i < startPositions.Length; i++) {
+            startPositions[i].transform.localPosition = startPositions[i].startPosition;
         }
     }
 }

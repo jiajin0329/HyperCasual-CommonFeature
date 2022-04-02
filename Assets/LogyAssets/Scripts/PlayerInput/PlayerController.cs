@@ -5,16 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     static private PlayerController playerController;
     private PlayerController() {}
-    [SerializeField] private Logy.Input input;
-    [SerializeField] private Input_Dis input_Dis;
+    [SerializeField] private Mobile_Input input;
+    [SerializeField] private Input_Distance input_Distance;
 
     private void Awake() {
-        if(playerController != null) print("this scene have same class");
+        if(playerController != null) Debug.Log("this scene have same class");
         else playerController = this;
     }
 
     private void Update() {
         input.Main();
-        input_Dis.Main();
+        input_Distance.Main();
     }
 }
