@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ShowFPS : MonoBehaviour {
-    [SerializeField] private Text fpsText;
-    private byte fps;
+    [SerializeField] Text fpsText;
+    byte fps;
 
-    private void Update() {
+    void Update() {
         fps = (byte)(1f / Time.unscaledDeltaTime);
         fpsText.text = fps + " fps";
     }
