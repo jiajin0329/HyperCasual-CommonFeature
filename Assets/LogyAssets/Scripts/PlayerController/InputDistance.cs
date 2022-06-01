@@ -8,23 +8,23 @@ public class InputDistance : MonoBehaviour{
     static InputDistance inputDistance;
     InputDistance() {}
 
-    static Vector2 differencePos;
-    static public Vector2 Get_DifferencePos() {return differencePos;}
-    [SerializeField] Vector2 show_differencePos;
+    [SerializeField] Vector2 differencePos;
+    static public Vector2 Get_DifferencePos() {return inputDistance.differencePos;}
 
-    static float dis;
-    static public float Dis {get{return dis;}}
-    [SerializeField] float show_dis;
+    [SerializeField] float dis;
+    static public float Get_Dis() {return inputDistance.dis;}
 
     void Start() {
         //Singleton
-        if(inputDistance != null) Debug.Log("Input_Distance is instantiated");
+        if(inputDistance != null) {
+            Destroy(this);
+            Debug.LogError("Input_Distance is instantiated");
+        }
         else inputDistance = this;
     }
 
     void Update() {
         _Input_Distance();
-        ShowVariable();
     }
 
     void _Input_Distance() {
@@ -36,10 +36,5 @@ public class InputDistance : MonoBehaviour{
             differencePos = Vector2.zero;
             dis = 0f;
         }
-    }
-
-    void ShowVariable() {
-        show_differencePos = differencePos;
-        show_dis = dis;
     }
 }

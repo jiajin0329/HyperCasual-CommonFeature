@@ -8,42 +8,40 @@ public class Mobile_Input : MonoBehaviour{
     static Mobile_Input mobile_Input;
     Mobile_Input() {}
 
-    static bool onTouchUp;
-    static public bool Get_onTouchUp() {return onTouchUp;}
+    bool onTouchUp;
+    static public bool Get_onTouchUp() {return mobile_Input.onTouchUp;}
 
-    static bool onTouch;
-    static public bool Get_onTouch() {return onTouch;}
-    [SerializeField] bool show_onTouch;
+    [SerializeField] bool onTouch;
+    static public bool Get_onTouch() {return mobile_Input.onTouch;}
 
-    static bool onTouchDown;
-    static public bool Get_onTouchDown() {return onTouchDown;}
+    bool onTouchDown;
+    static public bool Get_onTouchDown() {return mobile_Input.onTouchDown;}
 
-    static Touch touch;
-    static public Touch Get_Touch() {return touch;}
+    Touch touch;
+    static public Touch Get_Touch() {return mobile_Input.touch;}
 
-    static Vector2 touchStartPosition;
-    static public Vector2 Get_TouchStartPosition() {return touchStartPosition;}
-    [SerializeField] Vector2 show_touchStartPosition;
+    [SerializeField] Vector2 touchStartPosition;
+    static public Vector2 Get_TouchStartPosition() {return mobile_Input.touchStartPosition;}
 
-    static Vector2 touchPosition;
-    static public Vector2 Get_TouchPosition() {return touchPosition;}
-    [SerializeField] Vector2 show_touchPosition;
+    [SerializeField] Vector2 touchPosition;
+    static public Vector2 Get_TouchPosition() {return mobile_Input.touchPosition;}
 
     Vector2 lastPosition;
 
-    static Vector2 touchDeltaPosition;
-    static public Vector2 Get_TouchDeltaPosition() {return touchDeltaPosition;}
-    [SerializeField] Vector2 show_touchDeltaPosition;
+    [SerializeField] Vector2 touchDeltaPosition;
+    static public Vector2 Get_TouchDeltaPosition() {return mobile_Input.touchDeltaPosition;}
 
     void Start() {
         //Singleton
-        if(mobile_Input != null) Debug.Log("Mobile_Input is instantiated");
+        if(mobile_Input != null) {
+            Destroy(this);
+            Debug.LogError("Mobile_Input is instantiated");
+        }
         else mobile_Input = this;
     }
 
     void Update() {
         GetInput();
-        ShowVariable();
     }
 
     void GetInput() {
@@ -82,12 +80,5 @@ public class Mobile_Input : MonoBehaviour{
             touchPosition = Vector2.zero;
             touchDeltaPosition = Vector2.zero;
         }
-    }
-
-    void ShowVariable() {
-        show_onTouch = onTouch;
-        show_touchStartPosition = touchStartPosition;
-        show_touchPosition = touchPosition;
-        show_touchDeltaPosition = touchDeltaPosition;
     }
 }

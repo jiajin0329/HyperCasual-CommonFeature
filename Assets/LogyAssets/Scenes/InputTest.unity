@@ -624,8 +624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e12f8a512e01084fa06327786666342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  show_differencePos: {x: 0, y: 0}
-  show_dis: 0
+  differencePos: {x: 0, y: 0}
+  dis: 0
 --- !u!114 &1528342213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,10 +638,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1006f394c01ba64bbbe21b9308f837a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  show_onTouch: 0
-  show_touchStartPosition: {x: 0, y: 0}
-  show_touchPosition: {x: 0, y: 0}
-  show_touchDeltaPosition: {x: 0, y: 0}
+  onTouch: 0
+  touchStartPosition: {x: 0, y: 0}
+  touchPosition: {x: 0, y: 0}
+  touchDeltaPosition: {x: 0, y: 0}
 --- !u!114 &1528342214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,6 +1135,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5644890658706156660}
+  - component: {fileID: 5644890658706156664}
+  - component: {fileID: 5644890658706156665}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1142,3 +1144,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5644890658706156664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5644890658706156662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e8130b790458543978be8e4113e227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5644890658706156665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5644890658706156662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e8130b790458543978be8e4113e227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
