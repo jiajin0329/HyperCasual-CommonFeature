@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PutObject : MonoBehaviour
-{
+public class PutObject : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {

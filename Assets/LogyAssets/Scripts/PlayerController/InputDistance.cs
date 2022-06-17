@@ -5,22 +5,22 @@ using UnityEngine;
 [System.Serializable]
 public class InputDistance : MonoBehaviour{
     //Singleton
-    static InputDistance inputDistance;
+    static InputDistance Singleton;
     InputDistance() {}
 
     [SerializeField] Vector2 differencePos;
-    static public Vector2 Get_DifferencePos() {return inputDistance.differencePos;}
+    static public Vector2 Get_DifferencePos() {return Singleton.differencePos;}
 
     [SerializeField] float dis;
-    static public float Get_Dis() {return inputDistance.dis;}
+    static public float Get_Dis() {return Singleton.dis;}
 
-    void Start() {
+    void Awake() {
         //Singleton
-        if(inputDistance != null) {
+        if(Singleton != null) {
             Destroy(this);
             Debug.LogError("Input_Distance is instantiated");
         }
-        else inputDistance = this;
+        else Singleton = this;
     }
 
     void Update() {

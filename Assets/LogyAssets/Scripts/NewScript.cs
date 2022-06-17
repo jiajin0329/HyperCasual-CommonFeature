@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class NewScript : MonoBehaviour{
+public class NewScript : MonoBehaviour {
     //Singleton
-    static NewScript _this;
+    static NewScript Singleton;
     NewScript() {}
 
     void Start() {
         //Singleton
-        if(_this != null) {
+        if(Singleton != null) {
             Destroy(this);
-            Debug.LogError("NewScript is Singleton");
+            Debug.LogError("GoalDoor is instantiated");
         }
-        else _this = this;
+        else Singleton = this;
     }
 }
