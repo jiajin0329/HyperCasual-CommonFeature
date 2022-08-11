@@ -6,13 +6,27 @@ public class ObjectStartSetting : MonoBehaviour {
     [SerializeField] Objects[] OpenObjects;
     [SerializeField] Objects[] CloseObjects;
     
-    [System.Serializable] public struct StartPosition {
+    [System.Serializable] struct StartPosition {
         [SerializeField] string name;
         public Transform transform;
         public Vector3 startPosition;
-        public Vector3 startAngles;
     }
+
     [SerializeField] StartPosition[] startPositions;
+
+    [System.Serializable] struct StartAngle {
+        [SerializeField] string name;
+        public Transform transform;
+        public Vector3 startAngle;
+    }
+    [SerializeField] StartAngle[] StartAngles;
+
+    [System.Serializable] struct StartScale {
+        [SerializeField] string name;
+        public Transform transform;
+        public Vector3 startScale;
+    }
+    [SerializeField] StartScale[] StartScales;
     void Awake() {
         byte i, j;
 
@@ -30,8 +44,18 @@ public class ObjectStartSetting : MonoBehaviour {
         }
 
         for(i = 0; i < startPositions.Length; i++) {
+            if(startPositions[i].transform != null)
             startPositions[i].transform.localPosition = startPositions[i].startPosition;
-            startPositions[i].transform.localEulerAngles = startPositions[i].startAngles;
+        }
+
+        for(i = 0; i < StartAngles.Length; i++) {
+            if(StartAngles[i].transform != null)
+            StartAngles[i].transform.localEulerAngles = StartAngles[i].startAngle;
+        }
+
+        for(i = 0; i < StartScales.Length; i++) {
+            if(StartScales[i].transform != null)
+            StartScales[i].transform.localScale = StartScales[i].startScale;
         }
     }
 }

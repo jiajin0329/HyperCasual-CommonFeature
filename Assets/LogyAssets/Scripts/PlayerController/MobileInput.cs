@@ -3,45 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Mobile_Input : MonoBehaviour{
+public class MobileInput : MonoBehaviour{
     //Singleton
-    static Mobile_Input Singleton;
-    Mobile_Input() {}
+    static MobileInput singleton;
+    MobileInput() {}
 
     bool onTouchUp;
-    static public bool Get_onTouchUp() {return Singleton.onTouchUp;}
-
     [SerializeField] bool onTouch;
-    static public bool Get_onTouch() {return Singleton.onTouch;}
-
     bool onTouchDown;
-    static public bool Get_onTouchDown() {return Singleton.onTouchDown;}
 
     Touch touch;
-    static public Touch Get_Touch() {return Singleton.touch;}
+    static public Touch GetTouch() {return singleton.touch;}
 
     [SerializeField] Vector2 touchStartPosition;
-    static public Vector2 Get_TouchStartPosition() {return Singleton.touchStartPosition;}
+    static public Vector2 GetTouchStartPosition() {return singleton.touchStartPosition;}
 
     [SerializeField] Vector2 touchPosition;
-    static public Vector2 Get_TouchPosition() {return Singleton.touchPosition;}
+    static public Vector2 GetTouchPosition() {return singleton.touchPosition;}
 
     Vector2 lastPosition;
 
     [SerializeField] Vector2 touchDeltaPosition;
-    static public Vector2 Get_TouchDeltaPosition() {return Singleton.touchDeltaPosition;}
+    static public Vector2 GetTouchDeltaPosition() {return singleton.touchDeltaPosition;}
 
     void Awake() {
         //Singleton
-        if(Singleton != null) {
-            Destroy(this);
-            Debug.LogError("Mobile_Input is instantiated");
+        if(singleton != null) {
+            Debug.LogError("Mobile_Input must only one");
         }
-        else Singleton = this;
-    }
-
-    void Update() {
-        GetInput();
+        else singleton = this;
     }
 
     void GetInput() {
@@ -80,5 +70,8 @@ public class Mobile_Input : MonoBehaviour{
             touchPosition = Vector2.zero;
             touchDeltaPosition = Vector2.zero;
         }
+    }
+    void Update() {
+        GetInput();
     }
 }
