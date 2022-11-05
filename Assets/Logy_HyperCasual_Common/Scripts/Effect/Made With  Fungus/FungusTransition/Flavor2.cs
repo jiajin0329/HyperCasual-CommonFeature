@@ -7,8 +7,6 @@ public class Flavor2 : FungusTransition {
     enum Type {type1, type2}
     [SerializeField] Type type;
 
-    public override float CostTime() {return cost_time;}
-
     public void Init() {
         flowchart.GetVariable<Fungus.Vector3Variable>("angle").Value = new Vector3(0f, 0f, this.angle);
 

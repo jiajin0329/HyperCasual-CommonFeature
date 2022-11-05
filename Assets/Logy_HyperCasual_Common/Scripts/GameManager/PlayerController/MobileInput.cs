@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MobileInput : MonoBehaviour {
     //Singleton
@@ -9,16 +10,19 @@ public class MobileInput : MonoBehaviour {
     static bool singletonization;
     MobileInput() {}
 
-    public bool touchUp;
-    public bool touch;
     public bool touchDown;
+    public bool touch;
+    public bool touchUp;
+    
+    public UnityEvent TouchDownEvent;
+    public UnityEvent TouchUpEvent;
+    public UnityEvent TouchEvent;
+    
 
     void Awake() {
         //Singleton
-        if(!singletonization) {
-            singletonization = true;
-            singleton = this;
-        }
+        singleton = null;
+        singleton = this;
     }
 
     void Update() {
@@ -29,7 +33,8 @@ public class MobileInput : MonoBehaviour {
         else
             touchDown = false;
         
-        if(Input.GetMouseButton(0)) touch = true;
+        if(Input.GetMouseButton(0))
+            touch = true;
 
         if(Input.GetMouseButtonUp(0)) {
             touchDown = false;

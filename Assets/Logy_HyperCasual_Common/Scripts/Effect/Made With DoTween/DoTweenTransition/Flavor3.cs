@@ -54,8 +54,9 @@ public class Flavor3 : DoTweenTransition {
             float interval_width = 1f/image_amount;
 
             images[i] = Instantiate(image, generate_point.transform);
-            images[i].anchorMax = new Vector2(1-interval_width*i, images[i].anchorMax.y);
-            images[i].anchorMin = new Vector2(1-interval_width*(i+1), images[i].anchorMin.y);
+            images[i].anchorMax = new Vector2(1-interval_width*i, 1f);
+            images[i].anchorMin = new Vector2(1-interval_width*(i+1), 0f);
+
 
             images[i].localPosition += new Vector3(0f, Screen.height, 0f);
         }
