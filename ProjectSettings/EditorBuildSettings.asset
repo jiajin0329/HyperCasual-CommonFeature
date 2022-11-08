@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Logy_HyperCasual_Common/Scripts/Effect/TestAssets/1.unity
+    path: Assets/HyperCasual-Controller/Scripts/Effect/TestAssets/1.unity
     guid: 1f1cdc202c5c7cc488bbe12eafe65502
   - enabled: 1
-    path: Assets/Logy_HyperCasual_Common/Scripts/Effect/TestAssets/2.unity
+    path: Assets/HyperCasual-Controller/Scripts/Effect/TestAssets/2.unity
     guid: 18222205042580f448722ac5ea86da5c
   - enabled: 1
-    path: Assets/Logy_HyperCasual_Common/Scripts/Effect/TestAssets/3.unity
+    path: Assets/HyperCasual-Controller/Scripts/Effect/TestAssets/3.unity
     guid: 1da61e9858e3ae14581b94692f2cc3f0
   - enabled: 1
-    path: Assets/Logy_HyperCasual_Common/Scripts/Effect/TestAssets/4.unity
+    path: Assets/HyperCasual-Controller/Scripts/Effect/TestAssets/4.unity
     guid: 4d68f920c645bf241b4f2c0f655f3917
   m_configObjects: {}

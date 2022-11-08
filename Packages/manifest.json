@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.device-simulator": "3.0.3-preview",
     "com.unity.ide.vscode": "1.2.5",
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
